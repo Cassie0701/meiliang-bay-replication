@@ -11,7 +11,7 @@ from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-path=Path(__file__).with_name('梅梁湾Landsat8_月度点位配对59条.csv')
+path=Path(__file__).with_name('monthly-pairs.csv')
 data=pd.read_csv(path)
 assert len(data)==59 and data[['year','month','site']].drop_duplicates().shape[0]==59
 features=data[['green_SR','red_SR']].copy()
